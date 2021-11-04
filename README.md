@@ -7,6 +7,7 @@ Contains:
 * SceneManagement + Scene creation automation
 * Themeing
 * Light GUI animations
+* Tooltips
 
 ## Integration
 1. Copy folders into your Unity Project's Assets folder

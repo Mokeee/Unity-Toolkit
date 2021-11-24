@@ -7,6 +7,7 @@ public class SceneLocalizer : MonoBehaviour
 {
     public LocalizationChannel channel;
 
+#if UNITY_EDITOR
     [MenuItem("GameObject/Setup/SceneLocalizer")]
     static void CreateSceneLocalizer(MenuCommand menuCommand)
     {
@@ -25,6 +26,7 @@ public class SceneLocalizer : MonoBehaviour
 
         return go;
     }
+#endif
 
     public void RegisterText(LocalizedText text)
     {

@@ -12,6 +12,7 @@ public class SceneLoadRegister : MonoBehaviour
     private float totalProgress;
     private int completedInitiables;
 
+#if UNITY_EDITOR
     [MenuItem("GameObject/Setup/SceneLoadRegister")]
     static void CreateLoadRegister(MenuCommand menuCommand)
     {
@@ -30,6 +31,7 @@ public class SceneLoadRegister : MonoBehaviour
 
         return go;
     }
+#endif
 
     public void RegisterInitiable(IInitiable initiable)
     {

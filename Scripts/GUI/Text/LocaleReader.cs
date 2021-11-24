@@ -24,7 +24,7 @@ public class LocaleReader
 {
     private Dictionary<string, string> localeDictionary;
 
-
+#if UNITY_EDITOR
     public static Dictionary<string, LocaleReader> GetReaders(string baseFolder, out List<TextAsset> locales)
     {
         Dictionary<string, LocaleReader> readers = new Dictionary<string, LocaleReader>();
@@ -49,6 +49,19 @@ public class LocaleReader
 
         return readers;
     }
+
+    public static void SortAndSaveEdits(List<TextAsset> locales, Dictionary<string, LocaleReader> readers)
+    {
+        foreach (var locale in locales)
+        {
+            // update table itself instead of saved asset only
+            // otherwise, there will be a desinc which can cause issues; either immediately or when it gets fixed without you noticing
+            readers[locale.name].sortDict();
+            File.WriteAllText(AssetDatabase.GetAssetPath(locale), readers[locale.name].GetLocale());
+            EditorUtility.SetDirty(locale);
+        }
+    }
+#endif
 
     public LocaleReader(TextAsset localeAsset)
     {
@@ -155,17 +168,5 @@ public class LocaleReader
         foreach (var locale in localeDictionary)
             lookUp.locales.Add(new Locale { keyword = locale.Key, translation = locale.Value });
         return JsonUtility.ToJson(lookUp, true);
-    }
-
-    public static void SortAndSaveEdits(List<TextAsset> locales, Dictionary<string, LocaleReader> readers)
-    {
-        foreach (var locale in locales)
-        {
-            // update table itself instead of saved asset only
-            // otherwise, there will be a desinc which can cause issues; either immediately or when it gets fixed without you noticing
-            readers[locale.name].sortDict();
-            File.WriteAllText(AssetDatabase.GetAssetPath(locale), readers[locale.name].GetLocale());
-            EditorUtility.SetDirty(locale);
-        }
     }
 }

@@ -16,7 +16,6 @@ public class ThemeManager : MonoBehaviour
         if (SceneManager.GetActiveScene().isDirty)
             UpdateTheme();
     }
-#endif
 
     [MenuItem("GameObject/Setup/SceneLocalizer")]
     static void CreateThemeManager(MenuCommand menuCommand)
@@ -36,6 +35,7 @@ public class ThemeManager : MonoBehaviour
 
         return go;
     }
+#endif
 
     public void UpdateTheme()
     {

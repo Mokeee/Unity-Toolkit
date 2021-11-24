@@ -26,6 +26,7 @@ public class ThemeableButton : MonoBehaviour, ITooltipable, IPointerDownHandler
     private float tooltipTimeDelta;
     private float tooltipAppearanceMeantime = 1.0f;
 
+#if UNITY_EDITOR
     [MenuItem("GameObject/UI/ThemeableButton")]
     static void CreateNewButton(MenuCommand menuCommand)
     {
@@ -50,6 +51,7 @@ public class ThemeableButton : MonoBehaviour, ITooltipable, IPointerDownHandler
         Undo.RegisterCreatedObjectUndo(go, "Create " + go.name);
         Selection.activeObject = go;
     }
+#endif
 
     void Start()
     {

@@ -25,6 +25,7 @@ public class LocalizedText : MonoBehaviour, ITooltipable
 
     private SceneLocalizer sceneLocalizer;
 
+#if UNITY_EDITOR
     [MenuItem("GameObject/UI/LocalizedText")]
     static void CreateLocalizedText(MenuCommand menuCommand)
     {
@@ -46,6 +47,7 @@ public class LocalizedText : MonoBehaviour, ITooltipable
 
         return go;
     }
+#endif
 
     void Start()
     {

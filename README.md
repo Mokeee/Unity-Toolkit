@@ -23,4 +23,4 @@ This toolkit was compiled by Frederik Krumm.
 The scripts were coded by Frederik Krumm, the localization editor scripts were tweaked by Lars Meier-Ebert.
 
 04.11.2021
-Unity-Toolkit &copy; 2021 by Frederik Krumm and Lars Meier-Ebert
+Unity-Toolkit 2021 by Frederik Krumm and Lars Meier-Ebert

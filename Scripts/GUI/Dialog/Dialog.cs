@@ -3,16 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(CanvasGroup))]
-public class Dialog : MonoBehaviour, IDialog
+public class Dialog : MonoBehaviour, IDialog, IPointerClickHandler
 {
     [Header("Animation")]
     /// <summary>
     /// Curve used to fade the canvas group.
     /// </summary>
-    public AnimationCurve fadeCurve;
+    public AnimationCurve fadeCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
     /// <summary>
     /// Duration of the fading animation.
     /// </summary>
@@ -133,7 +134,9 @@ public class Dialog : MonoBehaviour, IDialog
         sceneLocalizer.TranslateText(headerText);
         sceneLocalizer.TranslateText(contentText);
 
-        flavorImage.sprite = content.image;
+
+        if (flavorImage != null && content.image != null)
+            flavorImage.sprite = content.image;
     }
 
     private IEnumerator FadeIn()
@@ -182,6 +185,11 @@ public class Dialog : MonoBehaviour, IDialog
     public void HideFromEvent()
     {
         Hide();
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        transform.SetAsLastSibling();
     }
 }
 

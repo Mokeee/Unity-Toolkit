@@ -7,11 +7,13 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
-public class ThemeableButton : MonoBehaviour, ITooltipable, IPointerDownHandler
+public class ThemeableButton : MonoBehaviour, ITooltipable, IPointerDownHandler, IPointerClickHandler
 {
+    public bool needsDoubleClick;
     public ButtonType buttonType;
     public string tooltipKeyword;
     public Image backgroundImage;
+    public Image selectionImage;
 
     [Header("Buttons Sounds")]
     public string clickSound;
@@ -25,6 +27,9 @@ public class ThemeableButton : MonoBehaviour, ITooltipable, IPointerDownHandler
     private bool tooltipSpawned;
     private float tooltipTimeDelta;
     private float tooltipAppearanceMeantime = 1.0f;
+
+    private float lastClick;
+    private float clickInterval = 0.2f;
 
 #if UNITY_EDITOR
     [MenuItem("GameObject/UI/ThemeableButton")]
@@ -56,6 +61,9 @@ public class ThemeableButton : MonoBehaviour, ITooltipable, IPointerDownHandler
     void Start()
     {
         GetComponent<Button>().onClick.AddListener(PlayButtonClickSound);
+
+        if (needsDoubleClick)
+            button.interactable = false;
     }
 
     public void CloseTooltip()
@@ -73,12 +81,16 @@ public class ThemeableButton : MonoBehaviour, ITooltipable, IPointerDownHandler
         OnBeginHoverEvent.Invoke(GetComponent<RectTransform>(), 0);
         isHovering = true;
         PlayButtonSound(hoverSound);
+        if (needsDoubleClick)
+            selectionImage.color = button.colors.highlightedColor;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         OnEndHoverEvent.Invoke(GetComponent<RectTransform>(), 0);
         isHovering = false;
+        if (needsDoubleClick)
+            selectionImage.color = new Color(0, 0, 0, 0);
     }
 
     void Update()
@@ -108,16 +120,26 @@ public class ThemeableButton : MonoBehaviour, ITooltipable, IPointerDownHandler
         PlayButtonSound(clickSound);
     }
 
-    public void PlayButtonSound(string soundname)
-    {
-        if (soundname != "")
-        {
-            Debug.Log("Play sound: " + soundname + "\n not yet implemented!");
-        }
-    }
-
     public void OnPointerDown(PointerEventData eventData)
     {
         PlayButtonSound(pointerDownSound);
+    }
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (needsDoubleClick)
+        {
+            if (lastClick + clickInterval > Time.time)
+            {
+                PlayButtonClickSound();
+                GetComponent<Button>().onClick.Invoke();
+            }
+            else
+            {
+                lastClick = Time.time;
+                selectionImage.color = button.colors.pressedColor;
+            }
+        }
+        else
+            PlayButtonClickSound();
     }
 }

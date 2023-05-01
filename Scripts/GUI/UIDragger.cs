@@ -1,27 +1,14 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(CanvasGroup))]
-public class DraggableDialog : Dialog, IDraggable
+public class UIDragger : MonoBehaviour, IDraggable
 {
     public RectTransform hitbox;
     private Vector2 offset;
     private Vector2 startingPosition;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void InterruptDrag()
     {
@@ -40,9 +27,6 @@ public class DraggableDialog : Dialog, IDraggable
         startingPosition = (Vector2)transform.position;
         offset = startingPosition - Mouse.current.position.ReadValue();
 
-        if (flavorImage != null)
-            flavorImage.color = new Color(1, 1, 1, 0.5f);
-
         transform.SetAsLastSibling();
     }
 
@@ -52,12 +36,6 @@ public class DraggableDialog : Dialog, IDraggable
     }
 
     public void OnEndDrag(PointerEventData eventData)
-    {
-        if (flavorImage != null)
-            flavorImage.color = new Color(1, 1, 1, 1f);
-    }
-
-    public void SetContent(DialogContent content)
     {
         throw new System.NotImplementedException();
     }

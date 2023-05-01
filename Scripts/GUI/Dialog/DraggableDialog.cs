@@ -57,7 +57,7 @@ public class DraggableDialog : Dialog, IDraggable
             flavorImage.color = new Color(1, 1, 1, 1f);
     }
 
-    public void SetContent(DialogContent content)
+    public new void SetContent(DialogContent content)
     {
         throw new System.NotImplementedException();
     }

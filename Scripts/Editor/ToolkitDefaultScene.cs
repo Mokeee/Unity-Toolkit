@@ -6,9 +6,9 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 
 [InitializeOnLoad]
-public class GloriaDefaultScene : Editor
+public class ToolkitDefaultScene : Editor
 {
-    static GloriaDefaultScene()
+    static ToolkitDefaultScene()
     {
         EditorSceneManager.newSceneCreated += AddCustomDefaultObjects;
     }

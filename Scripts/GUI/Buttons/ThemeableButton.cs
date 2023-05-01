@@ -23,6 +23,7 @@ public class ThemeableButton : MonoBehaviour, ITooltipable, IPointerDownHandler,
     public UIAnimationStartEvent OnBeginHoverEvent = new UIAnimationStartEvent();
     public UIAnimationStartEvent OnEndHoverEvent = new UIAnimationStartEvent();
     private bool isHovering;
+    private Button button;
 
     private bool tooltipSpawned;
     private float tooltipTimeDelta;
@@ -60,7 +61,8 @@ public class ThemeableButton : MonoBehaviour, ITooltipable, IPointerDownHandler,
 
     void Start()
     {
-        GetComponent<Button>().onClick.AddListener(PlayButtonClickSound);
+        button = GetComponent<Button>();
+        button.onClick.AddListener(PlayButtonClickSound);
 
         if (needsDoubleClick)
             button.interactable = false;
@@ -118,6 +120,14 @@ public class ThemeableButton : MonoBehaviour, ITooltipable, IPointerDownHandler,
     private void PlayButtonClickSound()
     {
         PlayButtonSound(clickSound);
+    }
+
+    public void PlayButtonSound(string soundname)
+    {
+        if (soundname != "")
+        {
+            Debug.Log("Play sound: " + soundname + "\n not yet implemented!");
+        }
     }
 
     public void OnPointerDown(PointerEventData eventData)

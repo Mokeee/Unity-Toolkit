@@ -17,7 +17,7 @@ public class ThemeManager : MonoBehaviour
             UpdateTheme();
     }
 
-    [MenuItem("GameObject/Setup/SceneLocalizer")]
+    [MenuItem("GameObject/Theme/Theme Manager")]
     static void CreateThemeManager(MenuCommand menuCommand)
     {
         var go = SpawnThemeManager(menuCommand.context as GameObject);

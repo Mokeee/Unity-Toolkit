@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[CreateAssetMenu(fileName = "SceneSwitch", menuName = "ScriptableObjects/SceneSwitch", order = 1)]
+[CreateAssetMenu(fileName = "SceneSwitch", menuName = "UnityToolkit/ScriptableObjects/SceneSwitch", order = 1)]
 public class SceneSwitchSO : ScriptableObject
 {
     /// <summary>

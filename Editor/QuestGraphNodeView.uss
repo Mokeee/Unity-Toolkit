@@ -1,0 +1,104 @@
+#node-border {
+    background-color: rgb(56, 56, 56);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left-color: rgba(0, 0, 0, 255);
+    border-right-color: rgba(0, 0, 0, 255);
+    border-top-color: rgba(0, 0, 0, 255);
+    border-bottom-color: rgba(0, 0, 0, 255);
+}
+
+.rootNode #title {
+    -unity-background-image-tint-color: rgb(21, 49, 49);
+    background-color: rgba(21, 49, 49, 255);
+}
+
+.actionNode #title {
+    -unity-background-image-tint-color: rgb(69, 203, 133);
+    background-color: rgba(36, 127, 80, 255);
+}
+
+.dialogNode #title {
+    -unity-background-image-tint-color: rgb(106, 127, 219);
+    background-color: rgba(48, 75, 197, 255);
+}
+
+.selectionNode #title {
+    -unity-background-image-tint-color: rgb(224, 141, 172);
+    background-color: rgba(202, 63, 114, 255);
+}
+
+#half-width {
+    flex-grow: 1;
+}
+
+:hover > #selection-border {
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+}
+
+:selected > #selection-border {
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+}
+
+#selection-border {
+    border-left-color: rgba(43, 219, 222, 255);
+    border-right-color: rgba(43, 219, 222, 255);
+    border-top-color: rgba(43, 219, 222, 255);
+    border-bottom-color: rgba(43, 219, 222, 255);
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+:hover:selected > #selection-border {
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+}
+
+#title {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-left-color: rgba(0, 0, 0, 255);
+    border-right-color: rgba(0, 0, 0, 255);
+    border-top-color: rgba(0, 0, 0, 255);
+    border-bottom-color: rgba(0, 0, 0, 255);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 1px;
+}
+
+#description {
+    -unity-text-align: middle-left;
+    font-size: 10px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}

@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4616866645740251168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b37569f67c2d6d40be83282b5e1bd32, type: 3}
+  m_Name: SimpleDialogNode
+  m_EditorClassIdentifier: 
+  GUID: 7a9fd5f8c91b24845899cabc312fae96
+  position: {x: -157.59999, y: 50.4}
+  child: {fileID: 463986345845044775}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0c6b6056d0c11c4a9c6311b1745e52e, type: 3}
+  m_Name: test2
+  m_EditorClassIdentifier: 
+  root: {fileID: 7813656773790956688}
+  nodes:
+  - {fileID: 1042679764636510437}
+  - {fileID: -4616866645740251168}
+  - {fileID: 7813656773790956688}
+  - {fileID: 463986345845044775}
+--- !u!114 &463986345845044775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 379f0301b6ecff2488305f79af7f2452, type: 3}
+  m_Name: DebugNode
+  m_EditorClassIdentifier: 
+  GUID: d5dce89a633f9684bb6cb9c5fe8613d6
+  position: {x: 40.800003, y: -40}
+  child: {fileID: 1042679764636510437}
+--- !u!114 &1042679764636510437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ff5d7c61097cd4baa797980eca3307, type: 3}
+  m_Name: QuestionAnswerNode
+  m_EditorClassIdentifier: 
+  GUID: 3655d6178d4c1a74abd9966b6b448c4b
+  position: {x: 282.40002, y: -60.8}
+  children: []
+--- !u!114 &7813656773790956688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f79d22bea1501b041b954a2a119a9d38, type: 3}
+  m_Name: RootNode
+  m_EditorClassIdentifier: 
+  GUID: eb5bee7ba14bfae41a11759a32c8f9c0
+  position: {x: -304, y: 13.599998}
+  child: {fileID: -4616866645740251168}

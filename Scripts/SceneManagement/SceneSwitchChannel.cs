@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[CreateAssetMenu(fileName = "SceneSwitchChannel", menuName = "ScriptableObjects/Channels/SceneSwitchChannel", order = 1)]
+[CreateAssetMenu(fileName = "SceneSwitchChannel", menuName = "UnityToolkit/ScriptableObjects/Channels/SceneSwitchChannel", order = 1)]
 public class SceneSwitchChannel : ScriptableObject
 {
     public UnityAction<SceneSwitchSO> OnSwitchRequested;

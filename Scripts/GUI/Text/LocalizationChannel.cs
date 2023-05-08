@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[CreateAssetMenu(fileName = "LocalizationChannel", menuName = "ScriptableObjects/Channels/LocalizationChannel", order = 1)]
+[CreateAssetMenu(fileName = "LocalizationChannel", menuName = "UnityToolkit/ScriptableObjects/Channels/LocalizationChannel", order = 1)]
 public class LocalizationChannel : ScriptableObject
 {
 	public UnityAction<LocalizedText> OnRegisterText;

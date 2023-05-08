@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-[CreateAssetMenu(fileName = "Theme", menuName = "ScriptableObjects/Theme", order = 1)]
+[CreateAssetMenu(fileName = "Theme", menuName = "UnityToolkit/ScriptableObjects/Theme", order = 1)]
 public class Theme : ScriptableObject
 {
     public Color titleTextColor = Color.black;

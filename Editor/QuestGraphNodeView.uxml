@@ -1,0 +1,28 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Assets/Unity-Toolkit/Editor/QuestGraphNodeView.uss?fileID=7433441132597879392&amp;guid=0d3914d46a2e1fd4da394831d4d27a26&amp;type=3#QuestGraphNodeView" />
+    <ui:VisualElement name="node-border" style="border-top-left-radius: 5px; border-bottom-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
+        <ui:VisualElement name="title">
+            <ui:Label name="title-label" class="unity-text-element unity-label" />
+            <ui:VisualElement name="title-button-container">
+                <ui:VisualElement name="collapse-button">
+                    <ui:VisualElement name="icon" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="contents">
+            <ui:VisualElement>
+                <ui:Label text="Description" display-tooltip-when-elided="true" name="description" />
+            </ui:VisualElement>
+            <ui:VisualElement name="divider" class="horizontal" style="border-bottom-width: 1px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); margin-left: 4px; margin-right: 4px; margin-top: 0; margin-bottom: 0;" />
+            <ui:VisualElement name="top" style="flex-direction: row;">
+                <ui:VisualElement name="half-width">
+                    <ui:VisualElement name="input" />
+                </ui:VisualElement>
+                <ui:VisualElement name="half-width">
+                    <ui:VisualElement name="output" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="selection-border" picking-mode="Ignore" style="flex-grow: 1;" />
+</ui:UXML>

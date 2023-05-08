@@ -6,7 +6,7 @@ using UnityEngine.UI;
 /// <summary>
 /// Content of a dialog
 /// </summary>
-[CreateAssetMenu(fileName = "Dialog", menuName = "ScriptableObjects/Dialog", order = 1)]
+[CreateAssetMenu(fileName = "Dialog", menuName = "UnityToolkit/ScriptableObjects/Dialog", order = 1)]
 public class DialogContent : ScriptableObject
 {
     /// <summary>

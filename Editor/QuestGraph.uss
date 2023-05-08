@@ -1,0 +1,28 @@
+Label {
+    font-size: 15px;
+    -unity-font-style: bold;
+    color: rgb(196, 196, 196);
+}
+
+GridBackground {
+    --grid-background-color: rgb(40, 40, 40);
+    --line-color: rgba(190, 190, 190, 0.1);
+    --thick-line-color: rgba(190, 190, 190, 0.2);
+    --spacing: 15;
+}
+
+.rootNode #title {
+    -unity-background-image-tint-color: rgba(21, 49, 49, 255);
+}
+
+.actionNode #title {
+    -unity-background-image-tint-color: rgba(69, 203, 133, 255);
+}
+
+.dialogNode #title {
+    -unity-background-image-tint-color: rgba(106, 127, 219, 255);
+}
+
+.selectionNode #title {
+    -unity-background-image-tint-color: rgba(224, 141, 172, 255);
+}

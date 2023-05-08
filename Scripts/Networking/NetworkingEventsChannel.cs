@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[CreateAssetMenu(fileName = "NetworkingEventsChannel", menuName = "ScriptableObjects/Channels/NetworkingEventsChannel", order = 1)]
+[CreateAssetMenu(fileName = "NetworkingEventsChannel", menuName = "UnityToolkit/ScriptableObjects/Channels/NetworkingEventsChannel", order = 1)]
 public class NetworkingEventsChannel : ScriptableObject
 {
     [Header("Server Messages")]

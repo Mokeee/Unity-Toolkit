@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/Unity-Toolkit/Editor/QuestGraph.uss?fileID=7433441132597879392&amp;guid=e3cec89ade883eb43b53a07783f21040&amp;type=3#QuestGraph" />
+    <uie:Toolbar>
+        <uie:ToolbarMenu display-tooltip-when-elided="true" text="Assets" />
+    </uie:Toolbar>
+    <UnityToolkitEditor.SplitView>
+        <ui:VisualElement name="left">
+            <UnityToolkitEditor.InspectorView style="flex-grow: 1; margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="right">
+            <UnityToolkitEditor.QuestGraphView focusable="true" style="flex-grow: 1;" />
+        </ui:VisualElement>
+    </UnityToolkitEditor.SplitView>
+</ui:UXML>
